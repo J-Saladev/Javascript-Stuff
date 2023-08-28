@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="row g-3" id="form">
+      <div class="mb-3">
+        <label for="InputFirstName" class="form-label">First Name</label>
+        <input type="firstname" class="form-control" id="InputFirstName" />
+      </div>
+      <div class="mb-3">
+        <label for="InputLastName" class="form-label">Last Name</label>
+        <input type="lastname" class="form-control" id="InputLastName" />
+      </div>
+
+      <div class="mb-3">
+        <label for="InputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="InputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="Inputnumber" class="form-label">Number</label>
+        <input
+          type="number"
+          class="form-control"
+          id="Inputnumber"
+          placeholder="(999) 999-999"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="1234 Main St"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          placeholder="Apartment, studio, or floor"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>Florida</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" />
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="submitInfo()">
+        Submit
+      </button>
+    </form>
+    <div class="row g-3">
+      <div class="col-12 hidden" id="info">
+        <h1 class="text-center">MUST READ INFO</h1>
+        <p id="name"></p>
+        <p id="email"></p>
+        <p id="phone"></p>
+        <p id="address"></p>
+      </div>
+    </div>
+    <script>
+      // Submits the information provided by the user to the specified HTML elements.
+      function submitInfo() {
+        let firstname = document.getElementById("InputFirstName").value;
+        let lastname = document.getElementById("InputLastName").value;
+        let email = document.getElementById("InputEmail1").value;
+        let phone = document.getElementById("Inputnumber").value;
+        let address = document.getElementById("inputAddress").value;
+        let address2 = document.getElementById("inputAddress2").value;
+        let City = document.getElementById("inputCity").value;
+        let State = document.getElementById("inputState").value;
+        let Zip = document.getElementById("inputZip").value;
+        let name = firstname + " " + lastname;
+        let fulladdress = address + " " + address2 + ", " + City + ", " + State + " " + Zip;
+        document.getElementById("info").classList.remove("hidden");
+        document.getElementById("name").innerHTML = "Name: " + name;
+        document.getElementById("email").innerHTML = "Email: " + email;
+        document.getElementById("phone").innerHTML = "Phone: " + phone;
+        document.getElementById("address").innerHTML ="Address: " + fulladdress;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <style>
+        hr {
+            height: 2px!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3 mb-3">
+        <div>
+            <h3>Example 1. Modifying HTML attributes</h3>
+            <button class="btn btn-danger" onclick="document.querySelector('img').src='images/bulboff.gif'">Off</button>
+            <img src="images/bulboff.gif" alt="Light">
+            <button class="btn btn-success" onclick="document.querySelector('img').src='images/bulbon.gif'">On</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Example 2. Modifying CSS styles</h3>
+            <p id="p1">This is a text</p>
+            <button class="btn btn-danger" onclick="document.getElementById('p1').style.color='red'">Red</button>
+            <p id="p2" class="mt-3">This text will be hidden</p>
+            <button class="btn btn-warning" onclick="document.getElementById('p2').style.visibility='hidden'">Hide</button>
+            <button class="btn btn-success" onclick="document.getElementById('p2').style.visibility='visible'">Show</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Example 3. Calling a function</h3>
+            <p id="p3">I am a paragraph</p>
+            <button class="btn btn-danger" onclick="changeText()">Change text</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Example 4. Output</h3>
+            <button class="btn btn-primary" onclick="window.alert('This is an alert')">Alert me</button>
+            <button class="btn btn-secondary" onclick="document.write('Refresh the browser to bring the page back!')">Write</button>
+            <button class="btn btn-success" onclick="this.innerHTML='My name changed'">innerHTML</button>
+            <button class="btn btn-info" onclick="console.log('I am a message on console')" title="Open the inspector to see the console">Console</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Example 5. Variables</h3>
+            <h5>Variables in JavaScript can be declared using: var, const and let keywords</h5>
+            <ul>
+                <li><b>var:</b> Variables declared with <b>var</b> are global variables. Use <b>var</b> to keep compatibility with older browsers</li>
+                <li><b>const:</b> Variables declared with <b>const</b> are global variables. As general rule, always declare variables with <b>const</b></li>
+                <li><b>let:</b> Variables declared with <b>let</b> are block-scoped variables. Use <b>let</b> if you think that the value of the variable can change</li>
+            </ul>
+            <button class="btn btn-primary" onclick="declaringVars()" title="Check the console to see the variables">Click me</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Example 6. Events</h3>
+            <input type="text" class="form-control" onmouseenter="this.style.backgroundColor='yellow'" onmouseleave="this.style.backgroundColor='white'" oninput="this.style.backgroundColor='white'" id="input">
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="hed">Hello!</h2>
+    <input class="form-control" type="text" id="txt" placeholder="Enter Text" />
+    <input
+      class="btn btn-primary"
+      type="button"
+      onclick="changeText()"
+      value="Change Text"
+    />
+    <h3>This is a paragraph</h3>
+    <p id="p1">
+      The button below will change the font size and color of this here
+      paragraph,<br />
+      atleast I hope so but you never know with javascript.
+    </p>
+    <input
+      class="btn btn-primary"
+      type="button"
+      onclick="changeColornSize()"
+      value="Change"
+    />
+    <script>
+      function changeText() {
+        document.getElementById("hed").innerHTML =
+          document.getElementById("txt").value;
+      }
+      function changeColor() {
+        // Generate random RGB values
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let rgb = `rgb(${r.toString()}, ${g.toString()}, ${b.toString()})`;
+
+        // Set the color of the paragraph
+        document.getElementById("p1").style.color = rgb;
+        console.log(rgb);
+      }
+      
+      let fsize =10
+      function changeSize() {// Set the font size of the paragraph
+        
+        fsize += 2
+        if (fsize > 50){
+          fsize = 10
+        }
+        
+        document.getElementById("p1").style.fontSize = fsize + "px";
+        console.log(fsize);
+      }
+      function changeColornSize() {
+        // Change font and color
+        changeColor();
+        changeSize();
+      }
+    </script>
+  </body>
+</html>

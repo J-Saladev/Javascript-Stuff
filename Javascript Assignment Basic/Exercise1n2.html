@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="name" id="firstname" class="form-control" pattern="[a-zA-Z\s]+" required placeholder="First Name">
+        <input type="text" name="name" id="lastname" class="form-control" pattern="[a-zA-Z\s]+" required placeholder="Last Name">
+        <input type="number" name="age" id="age" class="form-control" required placeholder="Age">
+        <input type="submit" value="Submit" onclick="sendInfo()">
+    </form>
+        <input type="submit" value="Display" onclick="myFunction()">
+        <p id="num">Number Here</p>
+        <p id="string">String Here</p>
+        <p id="boolean">Boolean Here</p>
+
+    <script>
+        function sendInfo(){
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const age = document.getElementById('age').value;
+
+            const info = "First Name: " + firstname + "\n" + "Last Name: " + lastname + "\n" + "Age: " + age;
+            alert(info);
+        }
+        const myNumber = 4
+        const myString = "Variables are great"
+        const myBoolean = false
+
+        function myFunction(){
+            document.getElementById("num").innerHTML = myNumber
+            document.getElementById("string").innerHTML = myString
+            document.getElementById("boolean").innerHTML = myBoolean
+        }
+    </script>
+</body>
+</html>
