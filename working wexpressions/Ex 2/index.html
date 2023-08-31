@@ -8,14 +8,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <h1 class="m-3">Practicing with Expressions and Functions</h1>
+    <form class="form-control" id="form">
+    <div class="row g-3 mb-3 mt-3">
+        <h4 class="m-3 text-center">Select Operation</h4>
+        <!-- This is the first column that holds the inputs -->
+        <div class="col-3">
+            <label for="num1">First Number (a)</label>
+            <input type="number" class="form-control" placeholder="Enter a number" id="num1">
+            <label for="num2">Second Number (b)</label>
+            <input type="number" class="form-control" placeholder="Enter a number" id="num2">
+            <button type="button" class="btn btn-primary" onclick="numSubmit()">Submit</button>
+            <button type="button" class="btn btn-danger" onclick="numClear()">Clear</button>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-3">
+            <button type="button" class="btn btn-success m-2" onclick=add()>Add</button>
+            <button type="button" class="btn btn-success m-2" onclick=sub()>Subtract</button>
+            <button type="button" class="btn btn-success m-2" onclick=mul()>Multiply</button>
+            <button type="button" class="btn btn-success m-2" onclick=div()>Divide</button>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-9">
+                    <button type="button" class="btn btn-primary m-2" onclick=>a==b?</button>
+                    <button type="button" class="btn btn-primary m-2" onclick=>a>b?</button>
+                    <button type="button" class="btn btn-primary m-2" onclick=>a<b? </button>
+                    <button type="button" class="btn btn-primary m-2" onclick=>a!=b?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-3 mt-3">
+        <div class="col-3">
+            <label for="result">Result</label>
+            <p class="form-control bg-secondary text-white" >Result: <span id="result"></span></p>
+        </div>
+        <div class="col-2"></div>
+        
+    </div>
+        
+    </form>
+
+
+
+
+
     
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
     <script src="index.js"></script>
 </body>
 </html>
