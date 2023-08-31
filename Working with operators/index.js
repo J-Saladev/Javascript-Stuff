@@ -74,52 +74,66 @@ function alesseqb() {
 
 // Functions for assignment
 function apequb() {
-    let first = parent(a.value);
-    let second = parent(b.value);
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
     first += second;
     document.getElementById("a += b").innerHTML = first;
 }
 // ^ a+=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function asubub() {
-    let result = parseInt(a.value) -= parseInt(b.value);
-    document.getElementById("a -= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first -= second;
+    document.getElementById("a -= b").innerHTML = first;
 }
 // ^ a-=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function amulub() {
-    let result = parseInt(a.value) *= parseInt(b.value);
-    document.getElementById("a *= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first *= second;
+    document.getElementById("a *= b").innerHTML = first;
 }
 // ^ a*=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function adivub() {
-    let result = parseInt(a.value) /= parseInt(b.value);
-    document.getElementById("a /= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first /= second;
+    document.getElementById("a /= b").innerHTML = first;
 }
 // ^ a/=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function amodub() {
-    let result = parseInt(a.value) %= parseInt(b.value);
-    document.getElementById("a %= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first %= second;
+    document.getElementById("a %= b").innerHTML = first;
 }
 // ^ a%=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function apowub() {
-    let result = parseInt(a.value) **= parseInt(b.value);
-    document.getElementById("a **= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first ** second;
+    document.getElementById("a **= b").innerHTML = first;
 }
 // ^ a**=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function aandub() {
-    let result = parseInt(a.value) &= parseInt(b.value);
-    document.getElementById("a &= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first &= second;
+    document.getElementById("a &= b").innerHTML = first;
 }
 // ^ a&=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 function aorub() {
-    let result = parseInt(a.value) |= parseInt(b.value);
-    document.getElementById("a |= b").innerHTML = result;
+    let first = parseInt(a.value);
+    let second = parseInt(b.value);
+    first |= second
+    document.getElementById("a |= b").innerHTML = first;
 }
 // ^ a|=b^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
