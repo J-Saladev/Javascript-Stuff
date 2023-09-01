@@ -1,53 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header class="bg-primary m-3 p-5">
-        <h2 class="text-center text-white">
-            Practicing With Javascript
-        </h2>
-        <p class="text-center text-white">Application to Practice with Javascript Functions, Operators, Expressions and Events</p>
+      <h2 class="text-center text-white">Practicing With Javascript</h2>
+      <p class="text-center text-white">
+        Application to Practice with Javascript Functions, Operators,
+        Expressions and Events
+      </p>
     </header>
 
     <main>
-        <!-- VVVVVVVVVVVVVV Boxes with Info VVVVVVVVVVVVVVVV -->
-        <div class="row m-3 text-center p-3">
-            <div class="col-4">
-                <h3 class="bg-primary text-white p-3">
-                    Hypotenuse of Triangle
-                </h3>
-                <form>
-                    <h4 class="m-3">
-                        Enter the length of two sides
-                    </h4>
-                    <!-- VVVVVVVVVVV Actual inputs :) VVVVVVVVVVVVVVV -->
-                    <div>
-                        <label for="sidea" class="mt-4">Side A</label>
-                        <input type="number" class="form-control" id="sidea">
-                        <label for="sideb" class="mt-4">Side B</label>
-                        <input type="number" class="form-control">
-                        <button type="button btn-success mt-3"></button>
-                        
-                    </div>
-                    
+      <!-- VVVVVVVVVVVVVV Boxes with Info VVVVVVVVVVVVVVVV -->
+      <div class="row m-3 text-center p-3" >
+        <div class="col-4">
+          <form class="border rounded border-darkwhite">
+            <h3
+              class="bg-primary text-white p-3 border rounded-top border-darkwhite"
+            >
+              Hypotenuse of Triangle
+            </h3>
 
+            <h4 class="m-3">Enter the length of two sides</h4>
+            <!-- VVVVVVVVVVV Actual inputs for hypotenuse :) VVVVVVVVVVVVVVV -->
+            <div>
+              <label for="sidea" class="mt-4">Side A</label>
+              <input type="number" class="form-control" id="sidea"/>
+              <label for="sideb" class="mt-4">Side B</label>
+              <input type="number" class="form-control" id="sideb"/>
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="hypTr()">
+                Calculate
+              </button>
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="clr()">
+                Clear Fields
+              </button>
+              <div style="height: 86px;"></div>
 
-
-
-
-
-                </form>
-                
+              <p class="bg-light p-3 border rounded border-darkwhite mt-5">
+                Hypotenuse of Triangle
+              </p>
             </div>
-
+          </form>
         </div>
-        <!-- ^^^^^^^^^^^^ Boxes with Info ^^^^^^^^^^^^^^^^^^^^^ -->
+        <div class="col-4 h-100">
+          <form class="border rounded border-darkwhite">
+            <h3
+              class="bg-primary text-white p-3 border rounded-top border-darkwhite"
+            >
+              Calculating Time
+            </h3>
+
+            <h4 class="m-3">Enter the amount of seconds</h4>
+            <!-- VVVVVVVVVVV Actual inputs for time :) VVVVVVVVVVVVVVV -->
+            <div>
+              <label for="seconds" class="mt-4">Seconds</label>
+              <input type="number" class="form-control" id="seconds" />
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="tme()">
+                Calculate
+              </button>
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="clr()">
+                Clear Fields
+              </button>
+
+              <div style="height: 172px;"></div>
+
+              <p class="bg-light p-3 border rounded border-darkwhite mt-5">
+                Calculating Time
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="col-4 h-100">
+          <form class="border rounded border-darkwhite">
+            <h3
+              class="bg-primary text-white p-3 border rounded-top border-darkwhite"
+            >
+              Calculating Average
+            </h3>
+
+            <h4 class="m-3">Enter three values</h4>
+            <!-- VVVVVVVVVVV Actual inputs for Average :) VVVVVVVVVVVVVVV -->
+            <div>
+              <label for="fval" class="mt-4">First Value</label>
+              <input type="number" class="form-control" id="fval" />
+              <label for="sval" class="mt-4">Second Value</label>
+              <input type="number" class="form-control" id="sval" />
+              <label for="tval" class="mt-4">Third Value</label>
+              <input type="number" class="form-control" id="tval" />
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="calc()">
+                Calculate
+              </button>
+              <button type="button" class="btn btn-primary mt-4 mb-5" onclick="clr()">
+                Clear Fields
+              </button>
+
+              <p class="bg-light p-3 border rounded border-darkwhite mt-5">
+                Calculating Average
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- ^^^^^^^^^^^^ Boxes with Info ^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+      <!-- VVVVVVVVVVVVVVV Boxes with Results VVVVVVVVVVVVVVVVV -->
+      <div class="row m-3 p-3">
+        <div class="col-1"></div>
+        <div class="col-2">
+            <p class="bg-light pb-5 border rounded"> Hypotenuse = <span id="hyp"></span> </p>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <p class="bg-light pb-2 border rounded"> 
+                Hours = <span id="hrs"></span><br>
+                Mins = <span id="mins"></span><br>
+                Seconds = <span id="sec"></span> 
+            </p>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <p class="bg-light pb-5 border rounded"> Average= <span id="avg"></span></p>
+        </div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^Boxes with Results ^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+    
 
 
 
@@ -55,14 +142,15 @@
 
 
 
+
+
+
+
+
+
+      </div>
     </main>
 
-
-
-
-
-
-
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
