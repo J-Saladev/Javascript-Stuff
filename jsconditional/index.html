@@ -7,15 +7,68 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <form class="form-control " style="height: vh;">
     <h1 class="text-center">Conditionals</h1>
     <input type="text" class="form-control" placeholder="Enter a number" id="num">
-    <button type="button" class="btn btn-primary" onclick="getDay()">Check</button>
+    <p class="text-center" id="all">
+        <span id="switch"></span>
+        <span id="psng"></span>
+        <span id="inc"></span>
+        <span id="eoo"></span>
+        <span id="day"> </span>
+    </p>
+    <button type="button" class="btn btn-primary" onclick="doAll()">Check</button>
+
+<!-- Above is the first couple tasks put together that includes ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+a program that detects if a  number is pos or neg, detects if three numbers are in increasing order, 
+if given 0-7 will assign it a day, reads two numbers and says if first is smaller and if so
+switches the two values.  -->
+
+<!-- Down here is a vowel checker, put in a character and it'll tell you if it vowel VVVVVVVV -->
+    <input type="text" id="vowel" class="form-control mt-3" placeholder="Put in a vowel, or don't.">
+    <p class="text-center" id="vresult" hidden></p>
+    <button type="button" class="btn btn-success mt-3" onclick="vowel()" id="vowel">Vowel?</button>
+
+
+    <!-- Calculates a discount if gross is over 20000 VVVVVVVVVVVVVV-->
+    <input type="text" id="amount" class="form-control mt-3" placeholder="Gross amount">
+    <p class="text-center" id="afteramt" hidden></p>
+    <button type="button" class="btn btn-warning mt-3" onclick="afterAmt()">Calculate</button>
+
+
+    <!-- Shows the sign of the product of three floating point nums without calculating themVVVVVVVVVV
+    VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
+    <div class="form-control mt-3 " id="">
+    <input type="text" id="num1" class="form-control mt-3" placeholder="num1">
+    <input type="text" id="num2" class="form-control mt-3" placeholder="num2">
+    <input type="text" id="num3" class="form-control mt-3" placeholder="num3">
+    <h4 id="bgst" hidden></h4>
+    <button type="button" class="btn btn-danger mt-3" onclick="plormi()">Sum</button>
+    <button type="button" class="btn btn-warning mt-3" onclick="bigst()">Find the Largest</button>   
+   <!-- This turns the number into its name valueVVVVVVVVVVVV -->
+    </div>
+    <div class="form-control mt-3"> 
+        <input class="form-control mt-3" type="number" id="digit" placeholder="Enter Digit (0-9)">
+        <h4 class="text-center" id="digitans" hidden></h4>
+        <button type="button" class="btn btn-success mt-3" onclick="digit()">Surprise</button>
+
+    </div>
+    <!-- This checks the type of property and does something based off of it -->
+    <div class="form-control mt-3"> 
+        <input class="form-control mt-3" type="text" id="inputtxt" placeholder="Enter Something">
+        <h4 class="text-center" id="output" hidden></h4>
+        <button type="button" class="btn btn-primary mt-3" onclick="chktype()">Check this out</button>
+    </div>
+    <div class="form-control mt-3">
+        <input class="form-control mt-3" type="text" placeholder="Recieved Score" id="score">
+        <h4 class="text-center" id="bonus" hidden></h4>
+        <button type="button" class="btn btn-primary mt-3" onclick="bonus()">Check Score</button>
 
 
 
+    
 
-
-
+</form>
 
     <script src="index.js"></script>
 </body>

@@ -1,14 +1,2 @@
-Write a program that detects if a number entered from the keyboard is positive or negative.
-Write a program that detects if three numbers entered by the user have been entered in increasing order.
-Write a program that determines if a number read from the keyboard is even or
-Write a program that given a number from 1 to 7 writes the corresponding name of the day of the week. Consider that day 1 corresponds to Monday.
-Write a program that reads a character and indicates whether or not it is a
-Write a program that reads two numbers from the keyboard and if the first one is greater than the second one, exchange its values.
-Write a program that reads from the keyboard the gross amount of an invoice and determines the net amount according to the following criteria:
-      Gross amount less than 20,000: no discount. A gross amount greater than 20,000: 15% discount.
 
-Write a program that shows the sign (+ or -) of the product of three floating point numbers without calculating the product. 
-Write a program that finds the biggest of three integers numbers using nested.
-Write a program that asks for a digit and depending on the input the program must show the name of that digit (in English) using a switch.  Digits must be between 0 and 9.
-Write a program that, depending on the user's choice inputs: integer, floating-point number, or string data types, performs the following operations according to these criteria: If the variable is an integer or floating-point number, increments it in one. If the variable is a string, appends * at its end. 
 Write a program that applies bonus scores to given scores in the range [1...9]. The program reads a digit as an input. If the digit is between 1 and 3, the program multiplies it by 10; if it is between 4 and 6, multiply it by 100; if it is between 7 and 9, multiply it by 1000. If it is zero or if the value is not a digit, the program must report an error. Use a switch statement to solve this exercise.
