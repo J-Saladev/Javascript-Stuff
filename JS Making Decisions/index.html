@@ -5,9 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+    .confetti{
+        max-width: 100vw;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        user-select: none;
+     }
+     </style>
 </head>
 <body>
+    <form class="form-horizontal form-control m-3">
+        <h3 class="form-title text-center">JS Making Decisions</h3>
+        <input type="text" class="form-control mt-3" placeholder="Input integer between 1 and 10" id="roman">
+        <p id="result" class="text-center" hidden></p>
+        <button type="button" class="btn btn-primary mt-3" onclick="romn()">Roman It</button>
+        <input type="text" class="form-control mt-3" placeholder="Enter Object Mass" id="objMass">
+        <p id="weight" class="text-center" hidden></p>
+        <button type="button" class="btn btn-primary mt-3" onclick="objMss()">Find Weight</button>
+        <input type="text" class="form-control mt-3" placeholder="Enter a day in this format mm/dd/yy" id="date">
+        <p id="magicresult" class="text-center" hidden></p>
+        <button type="button" class="btn btn-primary mt-3" onclick="mgcDay()">Roman It</button>
+    </form> 
+    <form class="form-horizontal form-control m-3">
+       <div class="row mt-3" id="row">
     
+            <div class="col-3">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked value="r">
+                    <label class="btn btn-outline-primary" for="btnradio1">Red</label>
+          
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="b">
+                    <label class="btn btn-outline-primary" for="btnradio2">Blue</label>
+          
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" value="y">
+                    <label class="btn btn-outline-primary" for="btnradio3">Yellow</label>
+                </div> 
+           </div>
+                <div class="col-3">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" checked value="r">
+                        <label class="btn btn-outline-primary" for="btnradio4">Red</label>
+              
+                        <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" autocomplete="off" value="b">
+                        <label class="btn btn-outline-primary" for="btnradio5">Blue</label>
+              
+                        <input type="radio" class="btn-check" name="btnradio2" id="btnradio6" autocomplete="off" value="y">
+                        <label class="btn btn-outline-primary" for="btnradio6">Yellow</label>
+                    </div>
+                </div>
+                <div class="col-1" id="color">
+
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+        
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-success ms-2" onclick="mix()">Mix</button>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal form-control m-3">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2">
+                <input type = "text" class="form-control mt-3 " placeholder="Number of Books" id="books">
+            </div>
+                
+    
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2 text-center">
+                <p class="text-center" hidden id="points"></p>
+                <button type="button" class="btn btn-success mt-3" onclick="points()">Calculate Points</button>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal form-control m-3">
+        <div class="row" style="height: 100px;">
+            <div class="col-3">
+                <input type = "text" class="form-control mt-3" placeholder="Number of Packages" id="packages">
+
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3">
+                <h4 class="text-center">Amount of discount</h4>
+                <p id="discountamt" class="text-center"></p>
+            
+            </div>
+            <div class="col-3">
+                <h4 class="text-center">Total</h4>    
+                <p id ="totalamt" class="text-center"></p>
+            </div>
+        </div>
+        <button class="btn btn-primary" onclick="packageDisc()" type="button">Calculate</button>
+    </form>
+    <form class="form-horizontal form-control mt-3">
+        <div class="row">
+            <h4 class="text-center">Try to get to a dollar</h4>
+            <canvas class="confetti" id="canvas" hidden></canvas>
+            <div class="col-2">
+                <input type="number" class="form-control mt-3 text-center" placeholder="Pennies" id="penny" required>
+                <input type="number" class="form-control mt-3 text-center" placeholder="Nickels" id="nickel" required>
+                <input type="number" class="form-control mt-3 text-center" placeholder="Dimes" id="dime" required>
+                <input type="number" class="form-control mt-3 text-center" placeholder="Quarters" id="quarter" required>
+            </div>
+
+            <div class="col-2 text-center">
+                <button class="btn btn-primary" style="margin-top: 100px;" onclick="checkGame()" type="button">=</button>
+            </div>
+
+            <div class="col-2">
+                <p class="" id="result" style="margin-top: 100px;"></p>
+            </div>
+
+            <div class="col-2">
+                <p class="text-center" id="noequal" style="margin-top: 100px;" hidden>Does Not Equal $1.00</p>
+                <p class="text-center" id="equal" style="margin-top: 100px;" hidden>Equals $1.00</p>
+            </div>
+        </div>
+
+    </form>
+    <form class="form-horizontal form-control mt-3">
+        <div class="row">
+
+            <div class="col-2">
+                <input type="text" class="form-control mt-3" placeholder="Total Calories" id="calories">
+                <input type="text" class="form-control mt-3" placeholder="Total Fat" id="fat">
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-success" style="margin-top: 45px;" onclick="calorie()">Calculate</button>
+                <br>
+                <input type="checkbox" class="form-check-input" id="lowfat">
+                <label class="form-check-label" for="lowfat">Low Fat?</label>
+            </div>
+            <div class="col-2">
+                <h5 class="text-center">Calories from Fat</h5>
+                <p class="text-center" id="fatcal"></p>
+            </div>
+            <div class="col-2">
+                <h5 class="text-center">Calorie % from Fat</h5>
+                <p class="text-center" id="percentcal"></p>
+            </div>
+            <div class="col-2" hidden id="resultcal">
+                <h5 class="text-center">Lowfat?</h5>
+                <p class="text-center" id="lowfat?"></p>
+            </div>
+        </div>
+    </form> 
+    <form class="form-horizontal form-control mt-3">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2 text-center">
+                <input type="text" class="form-control mt-3" placeholder="Seconds" id="Seconds">
+    
+        </div>
+    </form>
+
+
+
 
 
 
