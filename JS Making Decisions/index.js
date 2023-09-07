@@ -458,5 +458,30 @@ function calorie(){
 }
 
 function secTimer(){
+    let seconds = document.getElementById("seconds").value; 
+    console.log(seconds);
+    seconds = parseInt(seconds);
+    if (seconds >= 60 && seconds < 3600){
+      let minutes = seconds / 60;
+      console.log(minutes);
+      document.getElementById("time").innerHTML = minutes.toFixed(0) + " minute(s)";
+      document.getElementById("time").removeAttribute("hidden");
+    } else if (seconds >= 3600 && seconds < 86400){
+      let hrs = seconds / 3600;
+      console.log(hrs);
+      document.getElementById("time").innerHTML = hrs.toFixed(0) + " hour(s)";
+      document.getElementById("time").removeAttribute("hidden");
+    }else if (seconds >= 86400){
+      let days = seconds / 86400;
+      console.log(days);
+      document.getElementById("time").innerHTML = days.toFixed(0) + " days(s)";
+      document.getElementById("time").removeAttribute("hidden");
+    } else if (seconds < 60 && seconds > 0){
+      document.getElementById("time").removeAttribute("hidden");
+      document.getElementById("time").innerHTML = seconds.toFixed(0) + " second(s)";
+    } else {
+      alert("ERROR, Please enter a number");
+    }
     
-}
+
+  }
