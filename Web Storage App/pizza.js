@@ -120,5 +120,5 @@ function totalPrice (){
     let taxtotal = total * tax;
     total = total + taxtotal;
     document.getElementById("tax").innerHTML = "Tax: $" + taxtotal.toPrecision(2);
-    document.getElementById("subtotal").innerHTML = "Price After Tax: $" + total.toPrecision(2);
+    document.getElementById("subtotal").innerHTML = "Price After Tax: $" + total.toPrecision(4);
 }
