@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <form class="">
+    <form id="form">
       <h1 class="script text-center">Revlon Rental</h1>
       <div class="row">
         <div class="col-4"></div>
@@ -24,6 +24,7 @@
             id="firstname"
             aria-describedby="firstName"
             placeholder="Enter First Name"
+            required
           />
           <label for="lastname" class="mt-3">Last Name</label>
           <input
@@ -32,26 +33,27 @@
             id="lastname"
             aria-describedby="lastName"
             placeholder="Enter Last Name"
+            required
           />
 
           <label for="type" class="mt-3">Type of Car</label>
-          <select class="form-select" aria-label="Choose car type" id="type">
-            <option selected>Choose...</option>
+          <select class="form-select" aria-label="Choose car type" id="type" required>
+            <option disabled selected value="">Choose...</option>
             <option value="lux">Luxury</option>
             <option value="sport">Sports</option>
             <option value="util">Utility</option>
             <option value="econ">Economy</option>
           </select>
           <label for="pickupdate" class="mt-3">Pickup Date</label>
-          <input type="date" id="pickupdate" class="form-control" />
+          <input type="date" id="pickupdate" class="form-control" required/>
           <label for="returndate" class="mt-3">Return Date</label>
-          <input type="date" id="returndate" class="form-control" />
+          <input type="date" id="returndate" class="form-control" required/>
           <div class="text-center">
             <button
               id="submitInfo"
-              type="button"
+              type="submit"
               class="btn btn-primary mt-3"
-              onclick="submitheInfo()"
+              onclick="submitheInfo(event)"
             >
               Submit
             </button>
