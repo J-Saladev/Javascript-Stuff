@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        canvas {
+            background-color: skyblue;
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+        }
+        #char {
+            background-color: red;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas">
+        <div id="char"></div>
+
+    </canvas>
+    <script src="game.js"></script>
+</body>
+</html>
