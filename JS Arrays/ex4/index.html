@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body class="m-3">
+    <h1>Driver's License Exam</h1>
+    <h4 class="mt-3">This Exam has 20 Questions</h4>
+    <hr>
+    <div id="start">
+    <h5 class="mt-3">Click the button to start the exam</h5>
+    <btn type="button" class="btn btn-primary mt-3" onclick="startExam()">Start Exam</btn>
+    </div>
+    <div id="questions" hidden>
+    <h5 id="numquest"></h5>
+    <hr class="mt-3 w-25">
+    <input type="radio" class="form-=control mt-3" id="a" value="A" name="question">
+    <label for="a">A</label> 
+    <br> 
+    <input type="radio" class="form-=control mt-3" id="b" value="B" name="question">
+    <label for="b">B</label>  
+    <br>
+    <input type="radio" class="form-=control mt-3" id="c" value="C" name="question">
+    <label for="c">C</label> 
+    <br> 
+    <input type="radio" class="form-=control mt-3" id="d" value="D" name="question">
+    <label for="d">D</label>  
+    <br>
+    <button type="button" class="btn btn-primary mt-3" onclick="nextQuestion()" id="next">Next</button>
+    <button type="button" class="btn btn-secondary mt-3" onclick="checkAnswer()" id="check" hidden>Check Results</button>
+
+    </div>
+    <div class="mt-3" hidden id="results">
+        <p class="mt-3" style="color: red;" id="incorrect">Incorrect Questions: </p>
+    <h5 id="score"></h5>
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
