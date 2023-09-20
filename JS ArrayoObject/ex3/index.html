@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+   
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Airplane website</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-4">
+                <h4>Airplane Reservation</h4>
+            </div>
+            <div class="col-4">
+                <h4>Hotel Reservation</h4>
+            </div>
+            
+
+        </div>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            
+            
+            
+            <div class="col-2">
+                
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat1" id="seat1">
+                    <label class="form-check-label" for="seat1">Seat 1</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat2" id="seat2" >
+                    <label class="form-check-label" for="seat2">Seat 2</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat3" id="seat3" >
+                    <label class="form-check-label" for="seat3">Seat 3</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat4" id="seat4" >
+                    <label class="form-check-label" for="seat4">Seat 4</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat5" id="seat5" >
+                    <label class="form-check-label" for="seat5">Seat 5</label>
+            </div>
+            <div class="col-2">
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat6" id="seat6" >
+                    <label class="form-check-label" for="seat6">Seat 6</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat7" id="seat7" >
+                    <label class="form-check-label" for="seat7">Seat 7</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat8" id="seat8" >
+                    <label class="form-check-label" for="seat8">Seat 8</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat9" id="seat9" >
+                    <label class="form-check-label" for="seat9">Seat 9</label>
+                    <input type="checkbox" class="form-check" name = "seat" value = "seat10" id="seat10" >
+                    <label class="form-check-label" for="seat10">Seat 10</label>
+            </div>
+         
+            
+            <div class="col-2">
+                
+                    <input type="checkbox" class="form-check" name = "room" value="Room1" id="Room1">
+                    <label class="form-check-label" for="Room1">Room 1</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room2" id="Room2">
+                    <label class="form-check-label" for="Room2">Room 2</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room3" id="Room3">
+                    <label class="form-check-label" for="Room3">Room 3</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room4" id="Room4">
+                    <label class="form-check-label" for="Room4">Room 4</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room5" id="Room5">
+                    <label class="form-check-label" for="Room5">Room 5</label>
+            </div>
+            <div class="col-2">
+                    <input type="checkbox" class="form-check" name = "room" value="Room6" id="Room6">
+                    <label class="form-check-label" for="Room6">Room 6</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room7" id="Room7">
+                    <label class="form-check-label" for="Room7">Room 7</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room8" id="Room8">
+                    <label class="form-check-label" for="Room8">Room 8</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room9" id="Room9">
+                    <label class="form-check-label" for="Room9">Room 9</label>
+                    <input type="checkbox" class="form-check" name = "room" value="Room10" id="Room10">
+                    <label class="form-check-label" for="Room10">Room 10</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4 " style="text-align: center;">
+                <select class="form-select mt-3" name="class" id="flight" required>
+                    <option selected value="">Choose...</option>
+                    <option value="economy">Economy</option>
+                    <option value="firstclass">First Class</option>
+                </select>
+                <button type="button" class="btn btn-primary mt-3" onclick="reserveAP()">Reserve Seat</button>
+            </div>
+            <div class="col-4 text-center">
+                <select class="form-select mt-3" name="roomlevel" id="hotel" required>
+                    <option selected value="">Choose...</option>
+                    <option value="penthouse">Penthouse</option>
+                    <option value="Regular">Regular</option>
+                </select>
+                <button type="button" class="btn btn-primary mt-3" onclick="reserveHotel()">Reserve Room</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary w-100 mt-3" onclick="showRes()">Show Reserved</button>
+                <table class="table table-striped" id = "resstuff" hidden>
+                    <thead>
+                        <tr>
+                            <th scope="col">Res Num</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Seats</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        <tbody id="apstuff"></tbody>
+                    </thead>
+                </table>
+                <table class="table table-striped" id="hotelstuff" hidden>
+                    <thead>
+                        <tr>
+                            <th scope="col">Res Num</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Rooms</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                        <tbody id="roomstuff"></tbody>
+                </table>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    
+    <script src="index.js"></script>
+</body>
+</body>
+</html>
