@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Inventory System</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product Inventory System</h1>
+      <button id="addProductBtn" class="btn btn-primary">
+        Add New Product
+      </button>
+      <button id="showInventoryBtn" class="btn btn-secondary">
+        Show Inventory
+      </button>
+      <div id="inventory"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      // Product object
+      function Product(price, id, quantity) {
+        this.price = price;
+        this.id = id;
+        this.quantity = quantity;
+      }
+
+      // Inventory function
+      function Inventory() {
+        this.products = [];
+      }
+
+      Inventory.prototype.addProduct = function (product) {
+        this.products.push(product);
+      };
+
+      Inventory.prototype.getInventoryPrice = function () {
+        let totalPrice = 0;
+        for (let i = 0; i < this.products.length; i++) {
+          totalPrice += this.products[i].price * this.products[i].quantity;
+        }
+        return totalPrice;
+      };
+
+      let inventory = new Inventory();
+
+      // Add New Product button click event handler
+      $("#addProductBtn").click(function () {
+        // Add your logic to add a new product to the inventory array and save it to local storage
+        Swal.fire(
+          "New product added!",
+          "The product has been added to the inventory.",
+          "success"
+        );
+      });
+
+      // Show Inventory button click event handler
+      $("#showInventoryBtn").click(function () {
+        // Add your logic to display the list of all products in the inventory
+        Swal.fire(
+          "Inventory",
+          "This is the list of all products in the inventory.",
+          "info"
+        );
+      });
+    </script>
+  </body>
+</html>
