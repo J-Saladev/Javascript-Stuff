@@ -15,6 +15,7 @@ function addAccount(){
     console.log (accountid, fname, lname, balance);
     if (!accountid || !fname || !lname || !balance){
         alert("ERROR, Please enter into all fields");
+        return;
     }
     let account = {
         accountid,
