@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+    <h1> I am a bank account manager</h1>
+    <div class="row">
+        <div class="col-6">
+            <h4>Open New Account</h4>
+            <label for="accountid">Account Number</label>
+            <input type="text" id="accountid" class="form-control" placeholder="Click Generate to Generate Account ID" disabled>
+            <button type="button" class="btn btn-primary mt-3" onclick="generateAccount()">Generate Account ID</button>
+            <hr>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" class="form-control" placeholder="Enter Holder's First Name">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" class="form-control" placeholder="Enter Holder's Last Name">
+            <label for="balance">Initial Deposit</label>
+            <input type="text" id="balance" class="form-control" placeholder="Initial Balance you want to deposit">
+            <button type="button" class="btn btn-primary mt-3 w-100" onclick="addAccount()">Add Account</button>
+
+        </div>
+        <div class="col-6 text-end" >
+            <h4>Manage Accounts</h4>
+            <button type="button" class="btn btn-primary mt-3 w-100" onclick="showAccounts()">Show Accounts</button>
+            <button type="button" class="btn btn-success mt-3 w-100" onclick="depositMoney()">Deposit</button>
+            <button type="button" class="btn btn-danger mt-3 w-100" onclick="withdrawMoney()">Withdraw</button>
+        </div>
+    </div>
+    <table class="table table-striped mt-3" id="table" hidden>
+        <thead>
+            <tr>
+                <th>Account ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Balance</th>
+        </thead>
+        <tbody id="accountlist"></tbody>
+
+        </tbody>
+    </table>
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
