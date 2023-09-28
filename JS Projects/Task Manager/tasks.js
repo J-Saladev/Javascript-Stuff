@@ -11,7 +11,7 @@ function displayTasks(){
     let tasks = document.getElementById("tabletasks");
     if (tasklist.length === 0){
         tasks.innerHTML = "";
-        tasks.innerHTML += `<tr><td>You have no tasks!</td></tr>`
+        tasks.innerHTML += `<tr><td colspan="2">You have no tasks!</td></tr>`
 
     } else {
         
@@ -28,7 +28,9 @@ function displayTasks(){
         }
     
     }
-    
+    document.getElementById("showcomplete").hidden = false;
+    document.getElementById("showincomplete").hidden = false;
+    document.getElementById("showall").hidden = true;
     
     
 }
@@ -94,6 +96,47 @@ function displayTasks(){
      let user = JSON.parse(localStorage.getItem("loggedin"));
      let tasklist = JSON.parse(localStorage.getItem(user.email));
      tasklist[i].status = !tasklist[i].status;
+     localStorage.setItem(user.email, JSON.stringify(tasklist));
+     displayTasks();
+ }
+
+
+ function showRequest(a){
+     let user = JSON.parse(localStorage.getItem("loggedin"));
+     let tasklist = JSON.parse(localStorage.getItem(user.email));
+     let requestuser = tasklist.filter((task) => task.status == a);
+     let tasks = document.getElementById("tabletasks");
+    tasks.innerHTML = "";
+     for (let i = 0; i < requestuser.length; i++){
+         console.log(requestuser[i]);
+         
+         tasks.innerHTML += `<tr><td onclick="changeStatus(${i})" style="cursor: pointer">
+            ${requestuser[i].title}
+            </td>
+            <td>
+            ${requestuser[i].status ? '<i class="bi bi-check"></i>' : '<i class="bi bi-trash"></i>' }            
+            </td>
+            </tr>`
+     }
+     
+    console.log(requestuser);
+     if (a == true){
+         document.getElementById("showcomplete").hidden = true;
+         document.getElementById("showincomplete").hidden = false;
+         document.getElementById("showall").hidden = false;
+
+     } else if (a == false){
+         document.getElementById("showcomplete").hidden = false;
+         document.getElementById("showincomplete").hidden = true;
+         document.getElementById("showall").hidden = false;
+    
+ }
+ }
+
+ function deleteComplete(){
+     let user = JSON.parse(localStorage.getItem("loggedin"));
+     let tasklist = JSON.parse(localStorage.getItem(user.email));
+     tasklist = tasklist.filter((task) => task.status == false);
      localStorage.setItem(user.email, JSON.stringify(tasklist));
      displayTasks();
  }
